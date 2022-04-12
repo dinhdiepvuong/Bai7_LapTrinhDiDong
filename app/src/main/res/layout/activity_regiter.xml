@@ -36,9 +36,9 @@
         android:text="CREATE NEW ACCOUNT"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName3"
+        app:layout_constraintEnd_toEndOf="@+id/edtYourNameRegister"
         app:layout_constraintHorizontal_bias="0.407"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName3"
+        app:layout_constraintStart_toStartOf="@+id/edtYourNameRegister"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -53,57 +53,57 @@
         app:srcCompat="@drawable/group3" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/edtYourNameRegister"
         android:layout_width="326dp"
         android:layout_height="45dp"
         android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="Your name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName4"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmailRegister"
+        app:layout_constraintEnd_toEndOf="@+id/edtEmailRegister"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4" />
+        app:layout_constraintStart_toStartOf="@+id/edtEmailRegister" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/edtEmailRegister"
         android:layout_width="325dp"
         android:layout_height="41dp"
         android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName5"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5" />
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/edtPaswordRegister1"
+        app:layout_constraintEnd_toEndOf="@+id/edtPaswordRegister1"
+        app:layout_constraintStart_toStartOf="@+id/edtPaswordRegister1" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/edtPaswordRegister1"
         android:layout_width="319dp"
         android:layout_height="46dp"
         android:layout_marginBottom="28dp"
         android:ems="10"
         android:hint="Type password"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName6"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName6"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/edtPasswordRegister2"
+        app:layout_constraintEnd_toEndOf="@+id/edtPasswordRegister2"
         app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName6" />
+        app:layout_constraintStart_toStartOf="@+id/edtPasswordRegister2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/edtPasswordRegister2"
         android:layout_width="327dp"
         android:layout_height="50dp"
         android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="Type password"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
-        app:layout_constraintStart_toStartOf="@+id/button4" />
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegisterInReguster"
+        app:layout_constraintEnd_toEndOf="@+id/btnRegisterInReguster"
+        app:layout_constraintStart_toStartOf="@+id/btnRegisterInReguster" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnRegisterInReguster"
         android:layout_width="274dp"
         android:layout_height="60dp"
         android:layout_marginBottom="64dp"

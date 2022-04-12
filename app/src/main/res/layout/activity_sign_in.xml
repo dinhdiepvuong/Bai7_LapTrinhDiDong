@@ -21,7 +21,7 @@
         android:layout_width="89dp"
         android:layout_height="91dp"
         android:layout_marginEnd="76dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edtemaillogin"
         app:layout_constraintEnd_toStartOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:layout_constraintVertical_bias="0.0"
@@ -48,32 +48,32 @@
         app:srcCompat="@drawable/group4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edtemaillogin"
         android:layout_width="293dp"
         android:layout_height="45dp"
         android:layout_marginBottom="44dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName2"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2" />
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/edtpasswordlogin"
+        app:layout_constraintEnd_toEndOf="@+id/edtpasswordlogin"
+        app:layout_constraintStart_toStartOf="@+id/edtpasswordlogin" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/edtpasswordlogin"
         android:layout_width="296dp"
         android:layout_height="42dp"
         android:layout_marginBottom="48dp"
         android:drawableRight="@drawable/groupvector"
         android:ems="10"
         android:hint="Type Password"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="@+id/button3"
-        app:layout_constraintStart_toStartOf="@+id/button3" />
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignInLogin"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignInLogin"
+        app:layout_constraintStart_toStartOf="@+id/btnSignInLogin" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSignInLogin"
         android:layout_width="255dp"
         android:layout_height="55dp"
         android:layout_marginBottom="8dp"
