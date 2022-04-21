@@ -31,8 +31,8 @@ public class Finsh12 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finsh12);
 
-        imgbtnUnhappy = findViewById(R.id.imgbtnNornal);
-        imgbtnNormal = findViewById(R.id.imgbtnUnhappy);
+        imgbtnUnhappy = findViewById(R.id.imgbtnUnhappy);
+        imgbtnNormal = findViewById(R.id.imgbtnNornal);
         imgbtnHappy = findViewById(R.id.imgbtnHappy);
 
         final DatabaseReference ref = database.getReference("User").
