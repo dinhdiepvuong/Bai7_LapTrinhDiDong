@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Regiter extends AppCompatActivity {
     private TextView tvSginIn;
@@ -29,6 +30,7 @@ public class Regiter extends AppCompatActivity {
         setContentView(R.layout.activity_regiter);
 
         mAuth = FirebaseAuth.getInstance();
+
         edtYourName = findViewById(R.id.edtYourNameRegister);
         edtEmail = findViewById(R.id.edtEmailRegister);
         edtPass1 = findViewById(R.id.edtPaswordRegister1);
@@ -55,33 +57,55 @@ public class Regiter extends AppCompatActivity {
 
     private void register() {
         String email;
-        String pass1, pass2;
+        String pass1, pass2, yourname;
         email = edtEmail.getText().toString();
         pass1 = edtPass1.getText().toString();
         pass2 = edtPass2.getText().toString();
-        if(TextUtils.isEmpty(email)){
-            Toast.makeText(this, "Vui lòng nhập email!!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if(TextUtils.isEmpty(pass1)){
-            Toast.makeText(this, "Vui lòng nhập mật khẩu!!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if(TextUtils.isEmpty(pass2)){
-            Toast.makeText(this, "Vui lòng nhập lại mật khẩu!!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        yourname = edtYourName.getText().toString();
 
-        if(pass1.equals(pass2)){
+//        if(TextUtils.isEmpty(email)){
+//            Toast.makeText(this, "Vui lòng nhập email!!!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//        if(TextUtils.isEmpty(pass1)){
+//            Toast.makeText(this, "Vui lòng nhập mật khẩu!!!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+//        if(TextUtils.isEmpty(pass2)){
+//            Toast.makeText(this, "Vui lòng nhập lại mật khẩu!!!", Toast.LENGTH_SHORT).show();
+//            return;
+//        }
+        if(edtYourName.getText().length() == 0){
+            edtYourName.setError("Làm ơn nhập tên của bạn!");
+        }else if(edtEmail.getText().length() == 0){
+            edtEmail.setError("Vui lòng nhập email của bạn!");
+        }else if(edtPass1.getText().length() == 0){
+            edtPass1.setError("Vui lòng nhập mật khẩu");
+        }else if(edtPass2.getText().length() == 0){
+            edtPass2.setError("Nhập lại mật khẩu lần 2");
+        }else if(pass1.equals(pass2)){
             mAuth.createUserWithEmailAndPassword(email, pass1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(Regiter.this, "Đăng kí thành tài khoản thành công", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Regiter.this, Finsh12.class);
-                        startActivity(intent);
-                    }else {
-                        Toast.makeText(Regiter.this, "Đăng kí thất bại!!!", Toast.LENGTH_SHORT).show();
+
+                        User user = new User(yourname, email);
+                        FirebaseDatabase.getInstance().getReference("User").
+                                child(FirebaseAuth.getInstance().getCurrentUser().getUid()).
+                                setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if(task.isSuccessful()){
+                                    Toast.makeText(Regiter.this, "Đăng kí thành tài khoản thành công", Toast.LENGTH_SHORT).show();
+                                    edtYourName.setText("");
+                                    edtEmail.setText("");
+                                    Intent intent = new Intent(Regiter.this, Finsh12.class);
+                                    startActivity(intent);
+                                }else {
+                                    Toast.makeText(Regiter.this, "Đăng kí thất bại!!!", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
                     }
                 }
             });

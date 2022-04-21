@@ -36,13 +36,13 @@
         android:textColor="#2196F3"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imgbtnVui"
-        app:layout_constraintEnd_toEndOf="@+id/imgbtnVui"
+        app:layout_constraintBottom_toTopOf="@+id/imgbtnHappy"
+        app:layout_constraintEnd_toEndOf="@+id/imgbtnHappy"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/imgbtnVui" />
+        app:layout_constraintStart_toStartOf="@+id/imgbtnHappy" />
 
     <ImageButton
-        android:id="@+id/imgbtnVui"
+        android:id="@+id/imgbtnHappy"
         android:layout_width="128dp"
         android:layout_height="123dp"
         android:layout_marginBottom="156dp"
@@ -53,22 +53,22 @@
         app:srcCompat="@drawable/group3" />
 
     <ImageButton
-        android:id="@+id/imgbtnBuon"
+        android:id="@+id/imgbtnNornal"
         android:layout_width="125dp"
         android:layout_height="122dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/btnFinsh"
-        app:layout_constraintEnd_toStartOf="@+id/imgbtnVui"
+        app:layout_constraintEnd_toStartOf="@+id/imgbtnHappy"
         app:srcCompat="@drawable/group5" />
 
     <ImageButton
-        android:id="@+id/imgbtnGian"
+        android:id="@+id/imgbtnUnhappy"
         android:layout_width="118dp"
         android:layout_height="121dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toTopOf="@+id/btnFinsh"
-        app:layout_constraintStart_toEndOf="@+id/imgbtnVui"
+        app:layout_constraintStart_toEndOf="@+id/imgbtnHappy"
         app:srcCompat="@drawable/group4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
